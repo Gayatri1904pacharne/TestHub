@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script>
+    count=20
+    x=setInterval(()=>
+    {
+        count=count-1
+        var minute=Math.floor(count/60)
+        var seconds=count-(minute*60)
+        document.getElementById("s1").innerHTML=minute+":"+seconds
+        if(count==0)
+        {
+            stop()
+            location.href='/endexam/'
+         
+        }
+    
+    },1000)
+function stop()
+{
+    clearInterval(x)
+    console.log("interval stopped..")
+}
+</script>
+    <style>
+        body{
+            background-image: url("https://media.istockphoto.com/id/1224064817/photo/laptop-computer-on-a-modern-wooden-business-desk-with-a-notepad-and-pen-in-unfocused.jpg?s=612x612&w=0&k=20&c=V9D-NQkP4t9uY9sGwn1qOVD4-_v63CBpw8YJuoNzQzM=");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        input[type='text']{
+            display:block;
+            margin: 10px;
+            padding: 20px;
+            width:400;
+            text-align: center; 
+        } 
+         input[type='radio']{
+            color:black;
+            font-size: xx-large;
+            padding: 20px;
+        } 
+        form{ 
+                background-color:pink;
+                padding:30px;
+                border-radius: 8px; 
+                width: 500px;
+                height: 400px;
+                border-style: groove;
+            }
+        body{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                border-style: groove;
+            }
+         .radiobuttons{
+            font-size: 18px;
+            font-weight: bold;
+        
+        }
+        .textdesign{
+            font-size: 15px;
+            font-weight: bold;
+            text-align:  left;
+            border: 2px;
+
+        }
+        .buttondesign1{
+                background-color:#4CAF50;
+                padding: 10px 20px;
+                text-align: center;
+                display:ruby;
+                font-size: 16px;
+                margin:2px 2px;
+        }
+        .buttondesign2{
+                background-color:#4CAF50;
+                padding: 10px 20px;
+                text-align: center;
+                display:ruby;
+                font-size: 16px;
+                margin:2px 2px;
+        }
+        .buttondesign3{
+                background-color:rgb(212, 38, 38);
+               
+                padding: 10px 20px;
+                text-align: center;
+                display:ruby;
+                font-size: 16px;
+                margin:2px 2px;
+        }
+         .time-remain{
+            position: absolute;
+            top: 15px;
+            left: 520px;
+            transform:perspective();
+            font-size: 25px;
+           }
+       
+    </style>
+</head>
+<body>
+    <div class="time-remain">
+        <h4>Time remaining: <span id="s1"></span></h4>
+    </div>
+    <form>
+    <!-- <input type="text" name="qno qtext" value="{{question.qno}})  {{question.qtext}}"> -->
+    <input type="text" name="qno" value="{{question.qno}}" readonly>
+    <input type="text" name="qtext" value="{{question.qtext}}" readonly> 
+    <input type="hidden" name="answer" value="{{question.answer}}">
+    <div class="radiobuttons">
+    <input type="radio" name="op" value="{{question.op1}}" {% if previousanswer == question.op1 %} checked {% endif %} ><span >{{question.op1}}</span><br/><br/>
+    <input type="radio" name="op" value="{{question.op2}}" {% if previousanswer == question.op2 %} checked {% endif %}><span >{{question.op2}}</span><br/><br/>
+    <input type="radio" name="op" value="{{question.op3}}" {% if previousanswer == question.op3 %} checked {% endif %}><span >{{question.op3}}</span><br/><br/>
+    <input type="radio" name="op" value="{{question.op4}}" {% if previousanswer == question.op4 %} checked {% endif %}><span >{{question.op4}}</span><br/><br/>
+    </div>
+    <input type="hidden" name="subject" value="{{question.subject}}">
+    <span class="buttondesign1">
+    <input type="submit" value="Next" formaction="/nextQuestion" {% if isdisabled %} disabled {% endif %}>
+    </span>
+    <span class="buttondesign2">
+    <input type="submit" value="Previous" formaction="/previousQuestion">
+    </span>
+    <span class="buttondesign3">
+    <input type="submit" value="Endexam" formaction="/endexam">
+    </span>
+</form>
+<span style="color: red;font-size: 30px;">{{message}}</span>
+</body>
+</html>
+
+

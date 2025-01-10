@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+            form{
+                background-color:lightblue;
+                padding:20px;
+                border-radius: 8px;
+                width: 400px;
+                height: 700px;
+                }
+            body{
+                display:flex;
+                background-image: url("https://content.jdmagicbox.com/comp/pune/l6/020pxx20.xx20.221226164617.e2l6/catalogue/the-kiran-academy-deccan-gymkhana-pune-software-testing-institutes-1magtvhnvi.jpg");
+                justify-content: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                align-items: center;
+               
+            }
+            label{
+                font-size: 20px;
+            }
+            button{
+                width: 100%;
+                padding: 10px;
+                border-radius: 4px;
+        
+            }
+            input{
+                width:100%;
+                padding: 8px;
+                border: 1px solid black;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+    <body>
+
+<form method="post">
+    {% csrf_token %}
+    <h1><legend>Registration Form</legend></h1>
+    <label>Firstname:</label>
+    <input type="text" placeholder="Enter firstname" name="first_name"><br/><br/>
+    <label>Lastname:</label>
+    <input type="text" placeholder="Enter lastname" name="last_name"><br/><br/>
+    <label>Username:</label>
+    <input type="text" placeholder="Enter username" name="username"><br/><br/>
+    <label>Password:</label>
+    <input type="password" placeholder="Enter password" name="password1"><br/><br/>
+    <label>Confirm Password:</label>
+    <input type="password" placeholder="Confirm password" name="password2"><br/><br/>
+    <label>Email:</label>
+    <input type="email" placeholder="Enter email" name="email"><br/><br/>
+    <label><input type="checkbox" value="yes">I agree to the Terms and Conditions and Privacy Policy.</label><br/><br/>
+    <button>
+    <input type="submit" value="Register" formaction="/signup/" >
+    </button>
+    <h1>{{message}}</h1>
+    
+</form>
+    </body>
+</html>

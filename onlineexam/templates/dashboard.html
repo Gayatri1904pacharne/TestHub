@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+            h2{
+                background-color: yellowgreen;
+                color: red;
+                padding:20px;
+                text-align: center;
+                size: 300px;
+                margin-top:0px;
+            }
+            nav{
+             background-color: black;
+             }
+
+           a{
+             display: inline-block;
+             padding: 10px;
+             text-decoration: none;
+             color:white;
+             margin-right: 20px;
+             font-size: 20px;
+             font-weight: bold;
+            } 
+
+            
+         </style>
+        <body>
+            <form>
+           
+            <marquee><h2>Welcome to Dashboard</h2></marquee>
+
+                <nav>
+                    <a href="/adminapp/updatequestion/">Update Question</a>
+                    <a href="/adminapp/addquestion/">Add Question</a>
+                    <a href="/adminapp/deletequestion/">Deletete Question</a>
+                    <a href="/adminapp/marks_analysis/">Mark Analysis</a>
+                </nav>
+            <!-- </div> -->
+            {%include 'message.html' %}
+        </body>
+    </form>
+       
+   
+</html>

@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <style>
+        body{
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        input[type='text']{
+            display: block;
+            margin: 5px;
+            padding: 10px;
+            width:400;
+            text-align: center; 
+        } 
+         input[type='radio']{
+            color:black;
+            font-size: xx-large;
+            padding: 10px;
+        } 
+        form{ 
+                background-color:pink;
+                padding:10px;
+                border-radius: 8px; 
+                width: 500px;
+                height: 650px;
+                border-style: groove;
+            }
+        body{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                border-style: groove;
+                background-image: url("https://media.istockphoto.com/id/857045822/vector/seamless-question-mark-background.jpg?s=612x612&w=0&k=20&c=ZnLPDOCb6Cbbigju-STZ6iCZnyjtZLkEj5bHhXRIumI=");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            label{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .buttondesign{
+                background-color:#1df81d;
+                color: black;
+                padding: 15px;
+                text-align: center;
+                border-radius: 8px;
+                cursor: pointer;
+        }
+        </style>
+
+    </head>
+    <body>
+        <form method="post" >
+            {% csrf_token %}
+            <label>Qno:</label><input type="text" name="qno" >
+            <label>Question:</label><input type="text" name="qtext" >
+            <label>Answer:</label><input type="text" name="answer" >
+            <label>Option 1:</label><input type="text" name="op1" >
+            <label>Option 2:</label><input type="text" name="op2" >
+            <label>Option 3:</label><input type="text" name="op3" >
+            <label>Option 4:</label><input type="text" name="op4" >
+            <label>Subject:</label><input type="text" name="subject" ><br><br>
+            <span class="buttondesign">
+            <button formaction="/adminapp/getquestion/">Get Question</button>
+            <button formaction="/adminapp/updatequestion/">Update Question</button>
+            </span>
+        </form>
+    </body>
+</html>

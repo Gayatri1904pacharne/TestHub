@@ -1,0 +1,53 @@
+</html> 
+<head>
+    <style>
+        form{
+            background-color:lightblue;
+            padding:20px;
+            border-radius: 8px;
+            width: 400px;
+            height: 400px;
+            }
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("https://content.jdmagicbox.com/comp/pune/l6/020pxx20.xx20.221226164617.e2l6/catalogue/the-kiran-academy-deccan-gymkhana-pune-software-testing-institutes-1magtvhnvi.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        label{
+            font-size: 20px;
+        }
+        button{
+                width: 100%;
+                padding: 10px;
+                border-radius: 4px;
+        
+            }
+            input{
+                width:100%;
+                padding: 8px;
+                border: 1px solid black;
+                border-radius: 4px;
+            }
+            
+        </style>
+    </head>
+    
+<body>
+    
+<form method="post">
+    {% csrf_token %}
+    {%include 'message.html' %}
+    <h1>Login</h1>
+    <label>Username:</label>
+    <input type="text" placeholder="enter username" name="username"><br/><br/>
+    <label>Password:</label>
+    <input type="password" placeholder="enter password" name="password"><br/><br/>
+    <button>
+        <input type="submit" value="Login" formaction="/login/"><br><br>
+        <input type="submit" value="Sign Up" formaction="/signup/">
+    </button>
+</form>
+</body>

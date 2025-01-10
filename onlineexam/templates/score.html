@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <style>
+           form{ 
+                background-color:wheat;
+                padding:30px;
+                border-radius: 5%; 
+                width: 500px;
+                height: 400px;
+                border-style: groove;
+                border-top-style: solid;
+                text-align:center;
+            }
+        body{
+                display:flex;
+                justify-content: center; 
+                align-items: center;
+                border-style: groove;
+                background-image: url("https://i.gifer.com/Ir4.gif");
+                background-size: cover;
+                background-repeat: no-repeat;
+            } 
+            .heading{
+                font-size: 30px ;
+                font-family: 'Times New Roman', Times, serif;
+                font-weight: bold;
+
+            }
+            .subhead{
+                font-size: 20px ;
+                font-family: 'Times New Roman', Times, serif;
+                font-weight: bold;
+            } 
+             table{
+                width: 100%;
+                border-collapse: collapse;
+
+             }
+             th,td{
+                border: 1px solid black;
+                padding: 8px;
+                text-align: left;
+             }
+             th{
+                background-color: #f2f2f2;
+
+             }
+             tr:hover{
+                background-color: #ddd;
+
+             }
+             .congrat{
+                color: green;
+                font-size:20px;
+                font-weight: bold;
+                font-style: oblique;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                
+             }
+             button{
+                background-color: blue;
+                color: white;
+                padding: 15px;
+                text-align: center;
+                border-radius: 8px;
+                cursor: pointer;
+             }
+            
+        </style> 
+    </head>
+        <body>
+            <form>
+            <div class="heading">
+                <span> Your Result </span>
+            </div><br/><br/>
+            <div class="congrat">
+                    <span>Well done! You've successfully completed the test. </span>
+            </div>
+             </div><br/><br/>
+            <div class="subhead">
+                <span> {{username}},Marks obtained by you are {{score}}</span>
+
+            </div><br/><br/>
+            <input type="hidden" name="listoflist" value="{{listoflist}}">
+            
+               <button formaction="/viewscore/">View Score</button>
+            
+        
+        </form>
+       
+        </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <style>
+            h1 {
+                background-color: black;
+                color: white;
+                padding: 20px;
+                font-size: 80px;
+                text-align: center;
+                margin-top: 0px;
+               }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+                height: 100vh; 
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-color: cadetblue;
+                flex-direction: column;
+                }
+
+            form {
+                background-color: bisque;
+                padding: 20px;
+                border-radius: 8px;
+                width: 400px;
+                height: auto; 
+                text-align: center;
+            }
+            input{  
+                color:black;
+                margin:40px 10px 10px 70px;
+                padding:20px ;
+                background-color: #17a2b8;
+                border-color: #17a2b8;
+                font-size: medium;
+                text-align: center;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <h1>Online Examination System</h1>
+<form>
+<div>
+    {% if user.is_authenticated %}
+        <a href="/logout"><input type="text" value="Logout"></a>
+    {% else %}
+        <a href="/signup"><input type="text" value="Register"></a> &nbsp;&nbsp;
+        <a href="/login"><input type="text" value="Login"></a> &nbsp;&nbsp;
+    {% endif %}
+        <!-- <a href="/dashboard"><input type="text" value="Student Details"></a> &nbsp;&nbsp;<br/><br/> -->
+</div>
+</form>
+<!-- <form>
+    <input name="searchString" placeholder="Search from Google" >
+    <input type="submit" value="search" formaction="/search/">
+</form> -->
+</body>
+</html>

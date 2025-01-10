@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+        input{
+            display: block;
+            margin: 5px;
+            padding: 10px;
+            width:400;
+            text-align: center; 
+            } 
+              form{ 
+                background-color:pink;
+                padding:10px;
+                border-radius: 8px; 
+                width: 500px;
+                height: 200px;
+                border-style: groove;
+            }
+            body{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                border-style: groove;
+                background-image: url("https://media.istockphoto.com/id/857045822/vector/seamless-question-mark-background.jpg?s=612x612&w=0&k=20&c=ZnLPDOCb6Cbbigju-STZ6iCZnyjtZLkEj5bHhXRIumI=");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            label{
+            font-size: 20px;
+            font-weight: bold;
+        }
+            button{
+                background-color: #1dfc1d;
+                color:black;
+                padding: 15px;
+                text-align: center;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+<form method="post" action="/adminapp/deletequestion/">
+    {% csrf_token %}
+    <label>Qno:</label><input type="text" name="qno" placeholder="Enter question number">
+    <label>Subject:</label><input type="text" name="subject" placeholder="Enter subject">
+    <button>Delete Question</button>
+</form>
+</html>
